@@ -1,0 +1,5 @@
+.idea
+pkg
+work
+auth.yaml
+Gemfile.lock

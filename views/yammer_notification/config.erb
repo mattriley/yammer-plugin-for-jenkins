@@ -1,0 +1,47 @@
+<%
+   f = taglib("/lib/form")
+   f.block do
+     f.entry(:title => 'Consumer Key',
+             :field => 'consumer_key',
+             :description => 'Consumer Key supplied by Yammer.') do
+       f.textbox
+     end
+
+     f.entry(:title => 'Consumer Secret',
+             :field => 'consumer_secret',
+             :description => 'Consumer Secret supplied by Yammer.') do
+       f.textbox
+     end
+
+     f.entry(:title => 'OAuth Key',
+             :field => 'oauth_key',
+             :description => 'OAuth key.') do
+       f.textbox
+     end
+
+     f.entry(:title => 'OAuth Secret',
+             :field => 'oauth_secret',
+             :description => 'OAuth secret.') do
+       f.textbox
+     end
+
+     f.entry(:title => 'Group ID',
+             :field => 'group_id',
+             :description => 'Space separated list of Group IDs.') do
+       f.textbox
+     end
+
+     f.entry(:title => 'Success Message',
+             :field => 'success_message',
+             :description => 'Success message.') do
+       f.textbox
+     end
+
+     f.entry(:title => 'Unsuccessful Message',
+             :field => 'unsuccessful_message',
+             :description => 'Unsuccessful message.') do
+       f.textbox
+     end
+
+   end
+%>
