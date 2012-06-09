@@ -1,5 +1,7 @@
 #!/usr/bin/ruby
 
+# Taken from: http://wiki.openstreetmap.org/wiki/OAuth_ruby_examples
+
 # Get all the auth details you need
 # You wouldn't actually do it this way, but hey.
 # Normally you'd distribute the consumer stuff with your
