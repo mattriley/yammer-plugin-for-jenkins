@@ -1,6 +1,9 @@
-require 'oauth'
+require 'timeout'
+require File.expand_path(File.dirname(__FILE__) + '/message_sender')
 
 class YammerNotification < Jenkins::Tasks::Publisher
+
+  attr_accessor :consumer_key, :consumer_secret, :oauth_key, :oauth_secret, :group_id, :success_message, :unsuccessful_message
 
   display_name "Yammer Notification"
 
@@ -29,14 +32,32 @@ class YammerNotification < Jenkins::Tasks::Publisher
   # @param [Jenkins::Launcher] launcher the launcher that can run code on the node running this build
   # @param [Jenkins::Model::Listener] listener the listener for this build.
   def perform(build, launcher, listener)
-    message = build.native.getResult.to_s == 'SUCCESS' ? @success_message : @unsuccessful_message
-    body = "#{build.native.getFullDisplayName} #{build.native.getResult.to_s}\n#{message}"
     listener.info 'Sending Yammer notification...'
-    consumer = OAuth::Consumer.new @consumer_key, @consumer_secret, {:site => "https://www.yammer.com", :scheme => :header}
-    token_hash = {:oauth_token => @oauth_key, :oauth_token_secret => @oauth_secret}
-    access_token = OAuth::AccessToken.from_hash consumer, token_hash
-    access_token.request :post, 'https://www.yammer.com/api/v1/messages.json', {:body => body, :group_id => @group_id}
-    listener.info 'Yammer notification sent.'
+    message_sender = MessageSender.new @consumer_key, @consumer_secret, @oauth_key, @oauth_secret
+
+    begin
+      Timeout::timeout 10 do
+        message_sender.send_message message(build), @group_id
+        listener.info 'Yammer notification sent.'
+      end
+    rescue => e
+      jruby_version = `jruby -v`
+      if jruby_version =~ /ruby-1.9/
+        listener.info 'Result of Yammer notification could not be determined due to a compatibility issue.'
+        listener.info jruby_version
+      else
+        listener.error 'Yammer notification was not sent.'
+        listener.error e.message
+        listener.error e.backtrace
+      end
+    end
+  end
+
+  private
+
+  def message(build)
+    message = build.native.getResult.to_s == 'SUCCESS' ? @success_message : @unsuccessful_message
+    "#{build.native.getFullDisplayName} #{build.native.getResult.to_s}\n#{message}"
   end
 
 end
