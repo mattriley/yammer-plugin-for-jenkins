@@ -33,7 +33,7 @@ class NotificationSender
   end
 
   def send_notification_actual
-    yam = Yammer.new @data.consumer_key, @data.consumer_secret, @data.oauth_key, @data.oauth_secret
+    yam = Yammer.new @data.consumer_key_actual, @data.consumer_secret_actual, @data.oauth_key_actual, @data.oauth_secret_actual
     yam.send_message message, @data.group_id
     @listener.info 'Yammer notification sent.'
   end

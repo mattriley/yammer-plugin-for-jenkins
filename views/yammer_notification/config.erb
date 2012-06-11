@@ -3,43 +3,43 @@
    f.block do
      f.entry :title => 'Consumer Key',
              :field => :consumer_key,
-             :description => 'Consumer Key provided by Yammer.' do
+             :description => 'Consumer Key provided by Yammer. Leave blank to default to YAMMER.CONSUMER_KEY environment variable.' do
        f.textbox
      end
 
      f.entry :title => 'Consumer Secret',
              :field => :consumer_secret,
-             :description => 'Consumer Secret provided by Yammer.' do
+             :description => 'Consumer Secret provided by Yammer. Leave blank to default to YAMMER.CONSUMER_SECRET environment variable.' do
        f.textbox
      end
 
      f.entry :title => 'OAuth Key',
              :field => :oauth_key,
-             :description => 'OAuth Key of Yammer user to post from.' do
+             :description => 'OAuth Key of Yammer user to post from. Leave blank to default to YAMMER.OAUTH_KEY environment variable.' do
        f.textbox
      end
 
      f.entry :title => 'OAuth Secret',
              :field => :oauth_secret,
-             :description => 'OAuth Secret of Yammer user to post from.' do
+             :description => 'OAuth Secret of Yammer user to post from. Leave blank to default to YAMMER.OAUTH_SECRET environment variable.' do
        f.textbox
      end
 
      f.entry :title => 'Group ID',
              :field => :group_id,
-             :description => 'The Yammer group ID (feed ID) to post to.' do
+             :description => 'The Yammer group ID (feed ID) to post to. (Required)' do
        f.textbox
      end
 
      f.entry :title => 'Success Message',
              :field => :success_message,
-             :description => 'A custom message to post when the build finishes with a status of SUCCESS.' do
+             :description => 'A custom message to post when the build finishes with a status of SUCCESS. (Optional)' do
        f.textbox
      end
 
      f.entry :title => 'Unsuccessful Message',
              :field => :unsuccessful_message,
-             :description => 'A custom message to post when the build finishes with a status other than SUCCESS.' do
+             :description => 'A custom message to post when the build finishes with a status other than SUCCESS. (Optional)' do
        f.textbox
      end
    end
