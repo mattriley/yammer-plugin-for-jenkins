@@ -1,7 +1,6 @@
-require 'rubygems'
 require 'oauth'
 
-class MessageSender
+class Yammer
 
   def initialize(consumer_key, consumer_secret, oauth_key, oauth_secret)
     @consumer_key = consumer_key
@@ -13,7 +12,8 @@ class MessageSender
   def send_message(message, group_id)
     consumer = OAuth::Consumer.new @consumer_key, @consumer_secret, :site => 'https://www.yammer.com'
     access_token = OAuth::AccessToken.from_hash consumer, :oauth_token => @oauth_key, :oauth_token_secret => @oauth_secret
-    access_token.post 'https://www.yammer.com/api/v1/messages.json', {:body => message, :group_id => group_id}
+    response = access_token.post 'https://www.yammer.com/api/v1/messages.json', {:body => message, :group_id => group_id}
+    response.value # Raises an HTTP error if the response is not 2xx (success).
   end
 
 end
