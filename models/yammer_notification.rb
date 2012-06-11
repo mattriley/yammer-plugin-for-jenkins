@@ -1,5 +1,5 @@
 require 'timeout'
-require File.expand_path(File.dirname(__FILE__) + '/message_sender')
+require File.expand_path(File.dirname(__FILE__) + '/yammer')
 
 class YammerNotification < Jenkins::Tasks::Publisher
 
@@ -33,7 +33,7 @@ class YammerNotification < Jenkins::Tasks::Publisher
   # @param [Jenkins::Model::Listener] listener the listener for this build.
   def perform(build, launcher, listener)
     listener.info 'Sending Yammer notification...'
-    message_sender = MessageSender.new @consumer_key, @consumer_secret, @oauth_key, @oauth_secret
+    message_sender = Yammer.new @consumer_key, @consumer_secret, @oauth_key, @oauth_secret
 
     begin
       Timeout::timeout 10 do
