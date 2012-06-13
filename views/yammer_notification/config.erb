@@ -31,7 +31,7 @@
          f.entry :title => 'Group ID',
                  :field => :group_id,
                  :description => 'The Yammer group ID (feed ID) to post to. (Required)' do
-           f.textbox
+           f.textbox :clazz => 'required positive-number'
          end
 
          f.optionalBlock :title => 'Send success notifications',
