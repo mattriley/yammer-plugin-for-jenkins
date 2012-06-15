@@ -21,8 +21,8 @@ class NotificationSender
   def send_notification_rescue
     begin
       send_notification_timeout
-    rescue TimeoutError
-      ruby_19? ? write_compatibility_issue_message : write_timeout_message
+    rescue TimeoutError => e
+      write_timeout_message e
     rescue => e
       write_error_message e
     end
@@ -44,22 +44,8 @@ class NotificationSender
     "#{@build.native.getFullDisplayName} #{build_result}\n#{message}"
   end
 
-  def ruby_19?
-    jruby_version =~ /ruby-1.9/
-  end
-
-  def jruby_version
-    `jruby -v`
-  end
-
-  def write_compatibility_issue_message
-    @listener.info ['Result of Yammer notification could not be determined due to a compatibility issue with Ruby 1.9.',
-                    'For more information, see https://github.com/mattriley/yammer-plugin-for-jenkins/issues/1',
-                    jruby_version] * "\n"
-  end
-
-  def write_timeout_message
-    @listener.error 'Yammer notification timed out before result could be determined.'
+  def write_timeout_message(e)
+    @listener.error ['Yammer notification timed out before result could be determined.', e.message, e.backtrace] * "\n"
   end
 
   def write_error_message(e)

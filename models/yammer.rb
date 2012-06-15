@@ -1,4 +1,5 @@
 require 'oauth'
+require_relative 'buffered_io_patch'
 
 class Yammer
 
