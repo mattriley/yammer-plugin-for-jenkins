@@ -1,3 +1,4 @@
+require 'net/protocol'
 require 'timeout'
 
 # http://jira.codehaus.org/browse/JRUBY-6511
