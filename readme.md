@@ -2,11 +2,9 @@
 
 The Yammer Plugin for Jenkins enables notifications to be sent to a Yammer group on the success or failure of a build.
 
-This is an example of a successful build notification sent to the "Test" group:
+This is an example of a successful build notification sent to the __Build Notifications__ group:
 
 ![Success notification in Yammer](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/success_notification_in_yammer.png)
-
-TODO: Provide a better example.
 
 ## Installation
 
@@ -28,14 +26,14 @@ TODO: Expand this section. To have this section expanded sooner, please contact:
 
 ## Enable Yammer notifications for a job
 
-In the job configuration, select __Yammer Notification__:
+In the job configuration, under Post-build Actions, select __Yammer Notification__:
 
 ![Enable Yammer Notifications for a job](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/enable_yammer_notifications_for_job.png)
 
 The OAuth parameters default to environment variables in case the same parameters are used across many jobs.
 For example, you might create a user in Yammer representing Jenkins that will act as the source of all Yammer notifications from Jenkins.
 
-To set global environment variables, go to: Jenkins at Manage Jenkins > Configure System > Global Properties:
+Global environment variables can be set from Jenkins at Manage Jenkins > Configure System > Global Properties:
 
 ![OAuth environment variables](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/oauth_environment_variables.png)
 
