@@ -2,7 +2,7 @@ The Yammer Plugin for Jenkins enables notifications to be sent to a Yammer group
 
 This is an example of a successful build notification sent to the "Test" group:
 
-![Success notification in Yammer](readme/success_notification_in_yammer.png)
+![Success notification in Yammer](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/success_notification_in_yammer.png)
 
 TODO: Provide a better example.
 
