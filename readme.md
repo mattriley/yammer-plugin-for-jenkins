@@ -1,3 +1,5 @@
+# Yammer Plugin for Jenkins
+
 The Yammer Plugin for Jenkins enables notifications to be sent to a Yammer group on the success or failure of a build.
 
 This is an example of a successful build notification sent to the "Test" group:
