@@ -26,6 +26,6 @@ See [Yammer API Documentation for OAuth](https://developer.yammer.com/api/#oauth
 
 TODO: Expand this section. To have this section expanded sooner, please contact: matthew-github@matthewriley.name.
 
-## Enable a Yammer Notifications for a job
+## Enable Yammer Notifications for a job
 
 TODO: Expand this section.
