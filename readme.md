@@ -26,6 +26,26 @@ See [Yammer API Documentation for OAuth](https://developer.yammer.com/api/#oauth
 
 TODO: Expand this section. To have this section expanded sooner, please contact: matthew-github@matthewriley.name.
 
-## Enable Yammer Notifications for a job
+## Enable Yammer notifications for a job
 
-TODO: Expand this section.
+In the job configuration, select __Yammer Notification__:
+
+![Enable Yammer Notifications for a job](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/enable_yammer_notifications_for_job.png)
+
+The OAuth parameters default to environment variables in case the same parameters are used across many jobs.
+For example, you might create a user in Yammer representing Jenkins that will act as the source of all Yammer notifications from Jenkins.
+
+To set global environment variables, go to: Jenkins at Manage Jenkins > Configure System > Global Properties:
+
+![OAuth environment variables](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/oauth_environment_variables.png)
+
+If the OAuth parameters are specific to the job, simply replace the default values with the specific parameters.
+
+With the OAuth parameters set, select whether to send success and/or failure notifications:
+
+![Enable success notifications](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/enable_success_notifications.png)
+
+Both success and failure notifications accept a message and a group ID, both of which are required.
+The group ID is the feedId parameter in the group URL:
+
+![Group ID in URL](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/group_id_in_url.png)
