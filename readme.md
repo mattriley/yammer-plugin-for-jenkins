@@ -23,12 +23,11 @@ Install the plugin from the Jenkins Plugin Manager. It should be listed as __Yam
 ## Obtain an OAuth Token from Yammer
 
 The Yammer API uses OAuth for user authentication.
-As a result, the plugin requires 4 OAuth parameters which can be obtained by following the 2 steps below.
+As a result, the plugin requires 4 OAuth parameters which can be obtained by following the steps below.
 
 ### Register a New Application
 
-To obtain a __Client Key__ and a __Client Secret__, the plugin needs to be registered as a Yammer application.
-[Register a New Application](https://www.yammer.com/client_applications/new) now.
+To obtain a __Client Key__ and a __Client Secret__, [register the plugin as a Yammer application](https://www.yammer.com/client_applications/new).
 
 An example application name could be: Company XYZ Build Notifications.
 
