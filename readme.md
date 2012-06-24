@@ -8,7 +8,11 @@ This is an example of a successful build notification sent to the __Build Notifi
 
 ## Installation
 
-The plugin is not currently listed in Jenkins, but is expected to be soon. Until then:
+### Easy install
+
+Install the plugin from the Jenkins Plugin Manager. It should be listed as __Yammer Plugin__ under __Build Notifiers__.
+
+### Manual install
 
 1. Install the ruby-runtime plugin.
 2. Install the [Token Macro Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Token+Macro+Plugin). It may already be installed.
