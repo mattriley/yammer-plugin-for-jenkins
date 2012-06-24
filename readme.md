@@ -34,7 +34,7 @@ An example application name could be: Company XYZ Build Notifications.
 ### Obtain an OAuth Token
 
 To obtain an __OAuth Token__ and an __OAuth Secret__, download and run [get_auth.rb](https://github.com/jenkinsci/yammer-plugin/blob/master/get_auth.rb) using Ruby.
-get_auth.rb will first request a Client Key and Secret, then step through the process of obtaining an OAuth Token and Secret.
+get_auth.rb is a helper script that will request your Client Key and Secret, and walk through the process of obtaining an OAuth Token and Secret.
 
 When prompted to authorise the application, ensure Yammer is logged in with the user you want the notifications to be sent __from__.
 
