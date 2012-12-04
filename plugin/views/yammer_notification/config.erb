@@ -4,15 +4,15 @@
 %>
     <table style="margin-left: 30px;">
       <%
-         f.entry :title => 'Client Key',
+         f.entry :title => 'Consumer Key',
                  :field => :client_key,
-                 :description => 'Client Key provided by Yammer.' do
+                 :description => 'Consumer Key provided by Yammer.' do
            f.textbox :clazz => 'required', :default => '${YAMMER_CLIENT_KEY}'
          end
 
-         f.entry :title => 'Client Secret',
+         f.entry :title => 'Consumer Secret',
                  :field => :client_secret,
-                 :description => 'Client Secret provided by Yammer.' do
+                 :description => 'Consumer Secret provided by Yammer.' do
            f.textbox :clazz => 'required', :default => '${YAMMER_CLIENT_SECRET}'
          end
 
