@@ -52,7 +52,7 @@ otherwise the post will result in a HTTP 403 Unauthorised error.
 
 ## Changelog
 
-### Version 1.0.0 (Unreleased)
+### Version 1.0.0 (March 15, 2013)
 
 - Upgrade to OAuth 2.0 requiring only an access token.
 - Yammer group name replaces group ID.
