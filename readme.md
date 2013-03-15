@@ -79,6 +79,7 @@ otherwise the post will result in a HTTP 403 Unauthorised error.
 ### Version 0.1.1 (March 15, 2013)
 
 - Add support for Jenkins version 1.505. Thanks [Jörg Wendland](https://github.com/jwendland).
+- Use better OAuth terminology (consumer instead of client). Thanks [mikec-bullhorn](https://github.com/mikec-bullhorn).
 
 ### Version 0.1.0 (June 24, 2012)
 
