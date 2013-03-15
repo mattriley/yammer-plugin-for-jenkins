@@ -70,11 +70,18 @@ The group ID is the feedId parameter in the group URL:
 Please ensure that the Yammer user associated with the OAuth token has been added to the specified groups,
 otherwise the post will result in a HTTP 403 Unauthorised error.
 
-## Feedback
+## Support
 
-Thanks for your interest in the Yammer Plugin for Jenkins.
+[Raise an issue](https://github.com/mattriley/yammer-plugin-for-jenkins/issues)
 
-Your feedback is valuable. To provide feedback, [raise an issue](https://github.com/mattriley/yammer-plugin-for-jenkins/issues)
-or send an email to matthew-github@matthewriley.name.
+## Changelog
+
+### Version 0.1.1 (March 15, 2013)
+
+- Add support for Jenkins version 1.505. Thanks [Jörg Wendland](https://github.com/jwendland).
+
+### Version 0.1.0 (June 24, 2012)
+
+- Initial release.
 
 
