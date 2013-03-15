@@ -4,7 +4,7 @@ The Yammer Plugin for Jenkins enables notifications to be sent to a Yammer group
 
 This is an example of a successful build notification sent to the __Build Notifications__ group:
 
-![Success notification in Yammer](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/oauth2/readme/success_notification_in_yammer.png)
+![Success notification in Yammer](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/success_notification_in_yammer.png)
 
 ## Installation
 
@@ -28,18 +28,18 @@ See: <https://github.com/yammer/yam#general-configuration>.
 
 In the job configuration, under Post-build Actions, select __Yammer Notification__:
 
-![Enable Yammer Notifications for a job](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/oauth2/readme/enable_yammer_notifications_for_job.png)
+![Enable Yammer Notifications for a job](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/enable_yammer_notifications_for_job.png)
 
 The Access Token defaults to an environment variable named YAMMER_ACCESS_TOKEN under the assumption that the same access token will likely be the same for many, if not all jobs.
 For example, you might create a Yammer user representing Jenkins that will act as the source of all Yammer notifications from Jenkins.
 
 Global environment variables can be set from Jenkins at Manage Jenkins > Configure System > Global Properties:
 
-![OAuth environment variables](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/oauth2/readme/oauth_environment_variables.png)
+![OAuth environment variables](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/oauth_environment_variables.png)
 
 With the Access Token set, select whether to send success and/or failure notifications:
 
-![Enable success notifications](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/oauth2/readme/enable_success_notifications.png)
+![Enable success notifications](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/enable_success_notifications.png)
 
 Both success and failure notifications require a message and a group name. Environment variables are also allowed.
 
