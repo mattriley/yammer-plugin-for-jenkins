@@ -6,11 +6,6 @@ This is an example of a successful build notification sent to the __Build Notifi
 
 ![Success notification in Yammer](https://github.com/mattriley/yammer-plugin-for-jenkins/raw/master/readme/success_notification_in_yammer.png)
 
-## Breaking changes upgrading to version 0.2.0
-
-- OAuth has been upgraded to 2.0. Now only requires an access token.
-- Group IDs have been replaced with group names.
-
 ## Installation
 
 ### Easy install
@@ -50,3 +45,23 @@ Both success and failure notifications require a message and a group name. Envir
 
 Please ensure that the Yammer user associated with the OAuth token has been added to the specified groups,
 otherwise the post will result in a HTTP 403 Unauthorised error.
+
+## Support
+
+[Raise an issue](https://github.com/mattriley/yammer-plugin-for-jenkins/issues)
+
+## Changelog
+
+### Version 1.0.0 (Unreleased)
+
+- Upgrade to OAuth 2.0 requiring only an access token.
+- Yammer group name replaces group ID.
+
+### Version 0.1.1 (March 15, 2013)
+
+- Add support for Jenkins version 1.505. Thanks [Jörg Wendland](https://github.com/jwendland).
+- Use better OAuth terminology (consumer instead of client). Thanks [mikec-bullhorn](https://github.com/mikec-bullhorn).
+
+### Version 0.1.0 (June 24, 2012)
+
+- Initial release.
