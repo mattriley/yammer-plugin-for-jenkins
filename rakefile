@@ -1,7 +1,12 @@
+require 'bundler/setup'
 require_relative 'Rakelib/yammer_plugin_wiki_page'
 
 task :serve do
   from_plugin_dir { sh 'bundle install & JENKINS_OPTS="--httpPort=8081" jpi server' }
+end
+
+task :build do
+  from_plugin_dir { sh 'jpi build' }
 end
 
 task :snapshot do
