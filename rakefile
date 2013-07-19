@@ -1,4 +1,3 @@
-require 'bundler/setup'
 require_relative 'Rakelib/yammer_plugin_wiki_page'
 
 task :serve do
@@ -20,12 +19,12 @@ task :release_to_jenkins_ci do
 end
 
 task :update_jenkins_ci_wiki do
-  username = ENV['JENKINS_USERNAME']
-  password = ENV['JENKINS_PASSWORD']
-  raise 'JENKINS_USERNAME is required.' unless username
-  raise 'JENKINS_PASSWORD is required.' unless password
+  [:JENKINS_USERNAME, :JENKINS_PASSWORD].each do |var|
+    raise "#{var} is required." unless ENV[var.to_s]
+  end
+
   wiki_page = YammerPluginWikiPage.new
-  wiki_page.post username, password
+  wiki_page.post ENV['JENKINS_USERNAME'], ENV['JENKINS_PASSWORD']
 end
 
 def from_plugin_dir
