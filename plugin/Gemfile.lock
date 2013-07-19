@@ -16,7 +16,7 @@ GEM
       slop (~> 3.0.2)
     jruby-openssl (0.8.8)
       bouncy-castle-java (>= 1.5.0147)
-    json (1.7.7)
+    json (1.7.7-java)
     jwt (0.1.8)
       multi_json (>= 1.5)
     multi_json (1.7.7)
@@ -42,10 +42,10 @@ GEM
       yam (~> 0.0.6)
 
 PLATFORMS
-  ruby
+  java
 
 DEPENDENCIES
-  hashie (~> 1.2.0)
-  jenkins-plugin-runtime (~> 0.2.3)
-  jruby-openssl (~> 0.8.8)
-  yamwow (~> 0.1.6)
+  jenkins-plugin-runtime (= 0.2.3)
+  jruby-openssl (= 0.8.8)
+  yam (= 0.0.6)
+  yamwow (= 0.1.6)

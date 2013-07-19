@@ -6,8 +6,6 @@ java_import org.jenkinsci.plugins.tokenmacro.TokenMacro
 
 class YammerNotificationPerformer
 
-  PARAMS_FILE_NAME = 'yammer.json'
-
   def initialize(task, build, listener)
     @task = task
     @build = build
@@ -28,10 +26,19 @@ class YammerNotificationPerformer
 
   private
 
-  [:access_token, :success_message, :success_group_name, :failure_message, :failure_group_name].each do |field|
-    define_method(field) do
-      TokenMacro.expandAll @build.native, @listener.native, @task.instance_variable_get("@#{field}")
+  [:access_token, :success_message, :success_group_name, :failure_message, :failure_group_name, :config_file].each do |field|
+    define_method field do
+      expand_field field
     end
+  end
+
+  def expand_field(field)
+    puts "Using TokenMacro to expand field '#{field}'..."
+    value = @task.instance_variable_get "@#{field}"
+    puts "  Value: #{value}"
+    expanded_value = TokenMacro.expandAll @build.native, @listener.native, value
+    puts "  Expanded value: #{expanded_value}"
+    expanded_value
   end
 
   def params
@@ -49,7 +56,7 @@ class YammerNotificationPerformer
   end
 
   def params_file_exists?
-    File.exist? params_file
+    config_file && File.exist?(params_file)
   end
 
   def params_file_contents
@@ -57,7 +64,7 @@ class YammerNotificationPerformer
   end
 
   def params_file
-    File.join workspace_path, PARAMS_FILE_NAME
+    File.join workspace_path, config_file
   end
 
   def workspace_path

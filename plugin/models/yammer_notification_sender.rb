@@ -30,10 +30,13 @@ class YammerNotificationSender
 
   def group_id
     group_name = message_info.group
+    puts "Using YamWow! to retrieve ID for group named '#{group_name}'..."
     f = YamWow::Facade.new @params.access_token
     r = f.group_with_name group_name
-    raise "Yammer group '#{group_name}' does not exist." unless r.data
-    r.data['id']
+    raise "  Yammer group '#{group_name}' does not exist." unless r.data
+    id = r.data['id']
+    puts "  ID: #{id}"
+    id
   end
 
   def message_info
