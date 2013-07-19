@@ -11,15 +11,12 @@ GEM
       jenkins-war (> 1.427)
       rubyzip
       thor
-    json (1.8.0)
     json (1.8.0-java)
     kramdown (1.1.0)
     markdown2confluence (0.0.2)
       kramdown
       nokogiri
     mini_portile (0.5.1)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
     nokogiri (1.6.0-java)
       mini_portile (~> 0.5.0)
     rake (10.1.0)
@@ -29,7 +26,6 @@ GEM
 
 PLATFORMS
   java
-  ruby
 
 DEPENDENCIES
   jpi (~> 0.3)
