@@ -15,6 +15,7 @@ end
 task :release => [:release_to_jenkins_ci, :update_jenkins_ci_wiki]
 
 task :release_to_jenkins_ci do
+  # todo: git tag, push
   from_plugin_dir { sh 'jpi release --release' }
 end
 
