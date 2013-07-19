@@ -1,4 +1,4 @@
-require_relative 'Rakelib/yammer_plugin_wiki_page'
+require File.dirname(__FILE__) + '/Rakelib/yammer_plugin_wiki_page'
 
 task :serve do
   from_plugin_dir { sh 'bundle install & JENKINS_OPTS="--httpPort=8081" jpi server' }
